@@ -4,6 +4,7 @@
   --color-primary: #4873b7;
   --color-secondary: #37b558;
   --color-third: #f26739;
+  --color-text: #212539;
 }
 * {
   margin: 0;
@@ -125,7 +126,7 @@ img {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 90%;
   left: 0;
   background: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -138,6 +139,7 @@ img {
   transition: all 0.3s ease;
   list-style: none;
   overflow: hidden;
+  z-index: 10;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -759,5 +761,201 @@ img {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* about page */
+.breadcrumb-top {
+  width: 100%;
+  height: 210px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.breadcrumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.breadcrumb-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.breadcrumb-top h1 {
+  font-size: 64px;
+  font-weight: 600;
+  color: white;
+  z-index: 10;
+}
+.breadcrumb {
+  padding: 32px 0px;
+}
+
+.breadcrumb-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-transform: uppercase;
+}
+
+.breadcrumb-main a {
+  color: var(--color-primary);
+  text-decoration: none;
+
+}
+.breadcrumb-main a:hover {
+  color: var(--color-secondary);
+}
+.breadcrumb-main i {
+  color: var(--color-primary);
+  font-size: 14px;
+}
+.partners-top {
+  text-align: center;
+  font-family: var(--font-secondary);
+  padding-bottom: 80px;
+}
+.partners-top h2 {
+  font-size: 38px;
+  font-weight: 500;
+}
+.partners-top p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+.partners-top img {
+  max-width: 100px;
+  margin: 0 auto;
+}
+.mit {
+  padding: 15px;
+  border: 3px solid var(--color-third);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  margin: 80px 0px;
+}
+.mit-img {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.mit-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  max-height: 180px;
+}
+.mit-content {
+  padding: 15px;
+}
+.mit-content h3 {
+  font-size: 38px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-family: var(--font-secondary);
+}
+.partners-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 16px;
+}
+.partners-list-item {
+  border: 3px solid var(--color-third);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-basis: calc(33.33% - 32px);
+}
+.partners-list-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  padding: 15px;
+}
+.partners-list-item-content  h3 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-secondary);
+}
+.partners-list-item-img {
+  min-height: 211px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partners-list-item-content img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 85%;
+  margin: 0 auto;
+}
+.partners-list-item > a {
+  text-decoration: none;
+  color: #fff;
+   text-align: center;
+   background: var(--color-third);
+   min-height: 57px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: var(--font-secondary);
+   text-transform: uppercase;
+}
+
+@media screen and (max-width: 1023px) {
+  .breadcrumb-top h1 {
+    font-size: 48px;
+  }
+  .partners-list-item {
+    flex-basis: calc(50% - 16px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .mit {
+    grid-template-columns: 1fr;
+    margin: 40px 0px;
+    gap:20px;
+  }
+  .breadcrumb-top h1 {
+    font-size: 32px;
+  }
+  .partners-list-item {
+    flex-basis: 100%;
+  }
+  .breadcrumb-main {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .breadcrumb-main i {
+    font-size: 12px;
+  }
+  .partners-top p {
+    font-size: 16px;
+  }
+  .partners-top {
+    padding-bottom: 40px;
+  }
+  .mit-content h3 {
+    font-size: 32px;
   }
 }
